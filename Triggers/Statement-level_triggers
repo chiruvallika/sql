@@ -1,1 +1,12 @@
+CREATE OR REPLACE TRIGGER mytrg
+    BEFORE UPDATE OF emp  
+    ON customers
+DECLARE
+    dept NUMBER;
+BEGIN
+    dept := EXTRACT(DAY FROM sysdate);
 
+    IF l_day_of_month in (10,20) THEN
+        raise_application_error(-20100,'Cannot update emp detatils from departments 10 and 20');
+    END IF;
+END;
