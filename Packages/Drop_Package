@@ -1,1 +1,9 @@
+CREATE OR REPLACE PACKAGE BODY myPack AS
+  FUNCTION myfunc RETURN VARCHAR2 IS
+    BEGIN  
+      RETURN 'Practicing ...';
+    END myfunc;  
+END myPack; 
 
+
+drop package myPack;
